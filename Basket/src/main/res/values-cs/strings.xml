@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Košík</string>
+    <string name="action_settings">Nastavení</string>
+    <string name="action_remove">Odstranit</string>
+    <string name="action_add">Přidat</string>
+    <string name="action_edit">Upravit</string>
+    <string name="week_label">Týden</string>
+    <string name="shops_label">Obchody</string>
+    <string name="items_label">Položek</string>
+    <string name="pick_date">Výběr</string>
+
+</resources>

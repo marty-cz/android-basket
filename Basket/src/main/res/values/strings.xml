@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Basket</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_remove">Remove</string>
+    <string name="action_add">Add</string>
+    <string name="action_edit">Edit</string>
+    <string name="week_label">Week</string>
+    <string name="shops_label">Shops</string>
+    <string name="items_label">Items</string>
+    <string name="pick_date">Pick</string>
+
+</resources>

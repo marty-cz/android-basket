@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical" >
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dip">
+<!--
+        <TextView
+                android:id="@+id/item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:text="Product:"
+                android:textSize="20dp"
+                android:textStyle="bold" >
+        </TextView>
+-->
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textSize="22dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:hint="Product"
+                android:lines="1"
+                android:id="@+id/item_name_in"
+                android:nextFocusDown="@+id/item_price_in"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dip">
+
+        <TextView
+                android:id="@+id/item_price"
+                android:gravity="left|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:text="Price:"
+                android:textSize="20dp"
+                android:textStyle="bold" >
+        </TextView>
+
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right|center_vertical"
+                android:width="40dp"
+                android:textSize="22dp"
+                android:layout_gravity="right"
+                android:id="@+id/item_price_in"
+                android:inputType="numberDecimal"
+                android:numeric="decimal"
+                android:layout_weight="0.36"/>
+
+        <TextView
+                android:id="@+id/item_price"
+                android:gravity="right|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="-10dp"
+                android:paddingRight="5dp"
+                android:text=",- Kč"
+                android:textSize="22dp">
+        </TextView>
+
+    </LinearLayout>
+
+
+
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="?android:attr/dividerVertical"
+            android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:measureWithLargestChild="true"
+            style="?android:attr/buttonBarStyle">
+
+        <Button
+                android:id="@+id/btn_yes"
+                android:text="Yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground" />
+        <View
+                android:id="@+id/ViewColorPickerHelper"
+                android:layout_width="1dip"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:background="?android:attr/dividerHorizontal"/>
+
+        <Button
+                android:id="@+id/btn_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="No"
+                android:background="?android:attr/selectableItemBackground" />
+    </LinearLayout>
+
+
+</LinearLayout>
