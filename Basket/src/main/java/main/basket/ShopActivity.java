@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -25,16 +27,22 @@ import main.basket.list.structure.WeekListItem;
 public class ShopActivity extends BaseActivity {
 
   private WeekListItem week;
+  protected SimpleDateFormat df = new SimpleDateFormat("d. MMM");
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_shop);
-    week = (WeekListItem) getIntent().getSerializableExtra("week");
+    int i = (int) getIntent().getSerializableExtra("weekNo");
+    week = WeekActivity.weeks.getWeeks().get(i);
+
+    TextView tv = (TextView) findViewById(R.id.position_label);
+    tv.setText(week.getHeadLine() + " (" + df.format(week.getDateFrom().getTime())
+        + " - " + df.format(week.getDateTo().getTime()) + ")");
 
     Calendar cal = Calendar.getInstance();
-    week.addShop(new ShopListItem(ShopsEnum.SHOP_INTERSPAR, cal.getTime(), cal.getTime()));
-    week.addShop(new ShopListItem(ShopsEnum.SHOP_TESCO, cal.getTime(), cal.getTime()));
+    week.addShop(new ShopListItem(ShopsEnum.SHOP_INTERSPAR, cal.getTime(), null));
+    week.addShop(new ShopListItem(ShopsEnum.SHOP_TESCO, cal.getTime(), null));
 
     week.setShops((ArrayList<ShopListItem>) validateAndSortList(week.getShops()));
 
@@ -69,7 +77,9 @@ public class ShopActivity extends BaseActivity {
  //      Toast.makeText(ShopActivity.this, "open shop", Toast.LENGTH_SHORT).show();
 
     Intent myIntent = new Intent(ShopActivity.this, BasketActivity.class);
-    myIntent.putExtra("shop", week.getShops().get(listView.getCheckedItemPosition())); //Optional parameters
+   // myIntent.putExtra("shop", week.getShops().get(listView.getCheckedItemPosition())); //Optional parameters
+    myIntent.putExtra("weekNo", (int) getIntent().getSerializableExtra("weekNo")); //Optional parameters
+    myIntent.putExtra("shopNo", listView.getCheckedItemPosition()); //Optional parameters
     ShopActivity.this.startActivity(myIntent);
   }
 
@@ -97,10 +107,8 @@ public class ShopActivity extends BaseActivity {
         while (cal.get(Calendar.DAY_OF_WEEK) != shop.getBeggingDay()) {
           cal.add(Calendar.DAY_OF_YEAR, 1);
         }
-        Calendar last = (Calendar) cal.clone();
-        last.add(Calendar.DAY_OF_YEAR, 6);
 
-        ShopListItem item = new ShopListItem(shop, cal.getTime(), last.getTime());
+        ShopListItem item = new ShopListItem(shop, cal.getTime(), null);
         week.addShop(item);
         week.setShops((ArrayList<ShopListItem>) validateAndSortList(week.getShops()));
         adapter.setListData(week.getShops());

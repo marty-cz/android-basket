@@ -18,28 +18,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-      final Button btn = (Button) findViewById(R.id.button);
-      btn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          Intent intent = new Intent(MainActivity.this, WeekActivity.class);
-          startActivity(intent);
-        }
-      });
-
-
-
-      final ListView listview = (ListView) findViewById(R.id.listView);
-      String[] values = new String[] {"Android", "iPhone", "WindowsMobile",
-          "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-          "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-          "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-          "Android", "iPhone", "WindowsMobile"};
-
-      final ArrayList<String> list = new ArrayList<String>();
-      for (int i = 0; i < values.length; ++i) {
-        list.add(values[i]);
-      }
     }
 
   @Override

@@ -15,6 +15,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android SDK" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="gson-2.2.4" level="project" />
   </component>
 </module>
 

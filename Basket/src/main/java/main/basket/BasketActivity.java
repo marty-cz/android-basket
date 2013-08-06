@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,14 +26,21 @@ import main.basket.list.structure.ShopListItem;
 public class BasketActivity extends BaseActivity {
 
   protected ShopListItem shop;
+  protected SimpleDateFormat df = new SimpleDateFormat("d. MMM");
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_basket);
-    shop = (ShopListItem) getIntent().getSerializableExtra("shop");
+    int i = (int) getIntent().getSerializableExtra("weekNo");
+    int j = (int) getIntent().getSerializableExtra("shopNo");
+    shop = WeekActivity.weeks.getWeeks().get(i).getShops().get(j);
 
-    shop.addBasketItem(new BasketListItem("test", 5.90));
+    TextView tv = (TextView) findViewById(R.id.position_label);
+    tv.setText(shop.getHeadLine() + " (" + df.format(shop.getDateFrom().getTime())
+        + " - " + df.format(shop.getDateTo().getTime()) + ")");
+
+    shop.addBasketItem(new BasketListItem("Test", 5.90));
     shop.addBasketItem(new BasketListItem("test2", 1.99, true));
 
     listView = (ListView) findViewById(R.id.lv_basket);

@@ -40,7 +40,7 @@ public class BasketListAdapter extends BaseListAdapter {
     Resources res = layoutInflater.getContext().getResources();
 
     holder.headlineView.setText(item.getHeadLine());
-    holder.priceView.setText(String.valueOf(item.getPrice()) + " Kč");
+    holder.priceView.setText(String.format("%4.2f",item.getPrice()) + " Kč");
     holder.buyedCheckBox.setChecked(item.isBuyed());
 
     return convertView;

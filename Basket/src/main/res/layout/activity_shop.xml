@@ -5,6 +5,25 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+
+    <TextView
+            android:id="@+id/position_label"
+            android:layout_width="fill_parent"
+            android:gravity="left|center_vertical"
+            android:layout_height="30dp"
+            android:text="Week"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:paddingLeft="6dp"
+            android:background="@android:color/background_dark"
+            android:textColor="@android:color/background_light">
+    </TextView>
+
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.5dp"
+            android:background="@android:color/darker_gray"/>
+
     <ListView
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"

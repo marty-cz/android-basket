@@ -36,21 +36,25 @@ import java.util.List;
 import main.basket.helper.MainHelper;
 import main.basket.list.WeekListAdapter;
 import main.basket.list.structure.ShopListItem;
+import main.basket.list.structure.StructureWrapper;
 import main.basket.list.structure.WeekListItem;
+import main.basket.tools.Serializer;
 
 /** Created by martin on 27.7.13. */
 public class WeekActivity extends BaseActivity {
 
-  private ArrayList<WeekListItem> weekList = null;
+  public static StructureWrapper weeks = null;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_week);
 
-    weekList = (ArrayList<WeekListItem>) validateAndSortList(getListData());
+    weeks = new StructureWrapper(getListData());
+    weeks.setWeeks((ArrayList<WeekListItem>) validateAndSortList(weeks.getWeeks()));
+
     listView = (ListView) findViewById(R.id.lv_week);
-    adapter = new WeekListAdapter(WeekActivity.this, weekList);
+    adapter = new WeekListAdapter(WeekActivity.this, weeks.getWeeks());
 
     listView.setAdapter(adapter);
     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -81,12 +85,12 @@ public class WeekActivity extends BaseActivity {
           @Override
           public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
             WeekListItem item = new WeekListItem("week", new GregorianCalendar(year, monthOfYear, dayOfMonth).getTime());
-            weekList.add(item);
-            weekList = (ArrayList<WeekListItem>) validateAndSortList(weekList);
-            adapter.setListData(weekList);
+            weeks.addWeek(item);
+            weeks.setWeeks((ArrayList<WeekListItem>) validateAndSortList(weeks.getWeeks()));
+            adapter.setListData(weeks.getWeeks());
             listView.setAdapter(adapter);
 
-            listView.setItemChecked(findWeekIndexInList(weekList, item), true);
+            listView.setItemChecked(findWeekIndexInList(weeks.getWeeks(), item), true);
             showOpEditRemove = true;
             MainHelper.invalidateOptionsMenu(WeekActivity.this);
           }
@@ -105,12 +109,13 @@ public class WeekActivity extends BaseActivity {
           public void onClick(DialogInterface dialog, int which) {
             int i = listView.getCheckedItemPosition();
             if (i >= 0) {
-              weekList.remove(i);
-              adapter.setListData(weekList);
+              weeks.removeWeek(i);
+              adapter.setListData(weeks.getWeeks());
               listView.setAdapter(adapter);
-              if (weekList.size() > 0) {
-                if (i >= weekList.size()) {
-                  i = weekList.size() - 1;
+              int size = weeks.getWeeks().size();
+              if (size > 0) {
+                if (i >= size) {
+                  i = size - 1;
                 }
                 listView.setItemChecked(i, true);
                 showOpEditRemove = true;
@@ -132,7 +137,8 @@ public class WeekActivity extends BaseActivity {
  //   Toast.makeText(WeekActivity.this, "open shop", Toast.LENGTH_SHORT).show();
 
     Intent myIntent = new Intent(WeekActivity.this, ShopActivity.class);
-    myIntent.putExtra("week", weekList.get(listView.getCheckedItemPosition())); //Optional parameters
+   // myIntent.putExtra("week", weeks.getWeeks().get(listView.getCheckedItemPosition())); //Optional parameters
+    myIntent.putExtra("weekNo", listView.getCheckedItemPosition()); //Optional parameters
     WeekActivity.this.startActivity(myIntent);
   }
 
@@ -215,4 +221,41 @@ public class WeekActivity extends BaseActivity {
 
     return results;
   }
+
+
+  private Serializer serializer = new Serializer();
+
+  private void serialize() {
+    boolean res = serializer.serializeToJson("/sdcard/Download/basket.json", weeks, StructureWrapper.class);
+    if (!res) {
+      Toast.makeText(WeekActivity.this, serializer.getErrString(), Toast.LENGTH_LONG).show();
+    }
+  }
+
+  private void deserialize() {
+    StructureWrapper wrap = (StructureWrapper) serializer.deserializeFromJson("/sdcard/Download/basket.json", StructureWrapper.class);
+    if (wrap == null) {
+      Toast.makeText(WeekActivity.this, serializer.getErrString(), Toast.LENGTH_LONG).show();
+    } else {
+      weeks = wrap;
+      adapter.setListData(weeks.getWeeks());
+      adapter.notifyDataSetChanged();
+    }
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    // Handle item selection
+    switch (item.getItemId()) {
+      case R.id.action_serialize:
+        serialize();
+        return true;
+      case R.id.action_deserialize:
+        deserialize();
+        return true;
+      default:
+        return super.onOptionsItemSelected(item);
+    }
+  }
+
 }

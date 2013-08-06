@@ -41,16 +41,13 @@ public class ShopListAdapter extends BaseListAdapter {
 
     if (item.getDateFrom() == null)
       return convertView;
-    // set the date
-    Calendar cal = Calendar.getInstance();
-    cal.setTime(item.getDateFrom());
     // set the end date
-    Calendar last = (Calendar) cal.clone();
-    if (item.getDateTo() != null) {
-      last.setTime(item.getDateTo());
-    } else {
+    if (item.getDateTo() == null) {
       // and add six days
-      last.add(Calendar.DAY_OF_YEAR, 6);
+      Calendar cal = Calendar.getInstance();
+      cal.setTime(item.getDateFrom());
+      cal.add(Calendar.DAY_OF_YEAR, 6);
+      item.setDateTo(cal.getTime());
     }
 
     Resources res = layoutInflater.getContext().getResources();
@@ -58,7 +55,7 @@ public class ShopListAdapter extends BaseListAdapter {
     holder.iconView.setImageDrawable(res.getDrawable(item.getShop().getIconId()));
     holder.headlineView.setText(item.getHeadLine());
     holder.itemCountView.setText(res.getString(R.string.items_label) + ": " + ((item.getSubItemCount() >= 0) ? item.getSubItemCount() : 0));
-    holder.dateView.setText(df.format(cal.getTime()) + " - " + df.format(last.getTime()));
+    holder.dateView.setText(df.format(item.getDateFrom().getTime()) + " - " + df.format(item.getDateTo().getTime()));
 
     return convertView;
   }

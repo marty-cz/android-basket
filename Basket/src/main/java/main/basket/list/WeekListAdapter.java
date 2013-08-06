@@ -46,7 +46,9 @@ public class WeekListAdapter extends BaseListAdapter {
 
     Resources res = layoutInflater.getContext().getResources();
 
-    holder.headlineView.setText(cal.get(Calendar.WEEK_OF_YEAR) + ". " + res.getString(R.string.week_label));
+    item.setHeadLine(cal.get(Calendar.WEEK_OF_YEAR) + ". " + res.getString(R.string.week_label));
+
+    holder.headlineView.setText(item.getHeadLine());
     holder.itemCountView.setText(res.getString(R.string.shops_label) + ": " + ((item.getSubItemCount() >= 0) ? item.getSubItemCount() : 0));
 
     // "calculate" the start date of the week
@@ -55,6 +57,9 @@ public class WeekListAdapter extends BaseListAdapter {
     // and add six days to the end date
     Calendar last = (Calendar) first.clone();
     last.add(Calendar.DAY_OF_YEAR, 6);
+
+    item.setDateFrom(first.getTime());
+    item.setDateTo(last.getTime());
 
     holder.dateView.setText(df.format(first.getTime()) + " - " + df.format(last.getTime()));
 
