@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="act_week">Týdny</string>
+    <string name="act_shop">Obchody</string>
+    <string name="act_basket">Košík</string>
     <string name="app_name">Košík</string>
     <string name="action_settings">Nastavení</string>
+    <string name="action_download">Stažení dat</string>
+    <string name="action_upload">Nahrání dat</string>
     <string name="action_remove">Odstranit</string>
     <string name="action_add">Přidat</string>
     <string name="action_edit">Upravit</string>
@@ -10,5 +15,28 @@
     <string name="shops_label">Obchody</string>
     <string name="items_label">Položek</string>
     <string name="pick_date">Výběr</string>
+    <string name="are_u_sure">Jste si jistý/á?</string>
+    <string name="choose_shop">Zvolte obchod</string>
+    <string name="sync_ok">Úspěšně synchronizováno</string>
+    <string name="down_ok">Úspěšně staženo</string>
+    <string name="op_ok">Úspěšně odesláno</string>
+    <string name="save_ok">Úspěšně uloženo</string>
+    <string name="load_ok">Úspěšně načteno</string>
+    <string name="in">v</string>
+    <string name="serializing">Komprimuji struktury...</string>
+    <string name="deserializing">Rozbaluji struktury...</string>
+    <string name="uploading">Odesílám...</string>
+    <string name="downloading">Stahuji...</string>
+    <string name="sync">Synchronizace</string>
+    <string name="add_product">Přidat výrobek</string>
+    <string name="edit_product">Upravit výrobek</string>
+    <string name="err_empty_product">Název výrobku nesmí být prázdný</string>
+    <string name="err_unknown_result">Neznámá návratová hodnota procesu synchronizace</string>
+    <string name="err_price_num">Číslo u ceny není platné</string>
+    <string name="error">Chyba</string>
+    <string name="price_unit">Kč</string>
+    <string name="price_unit_all">,- Kč</string>
+    <string name="product">Výrobek</string>
+    <string name="price">Cena:</string>
 
 </resources>

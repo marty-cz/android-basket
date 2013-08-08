@@ -2,13 +2,10 @@ package main.basket.list;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -49,7 +46,8 @@ public class WeekListAdapter extends BaseListAdapter {
     item.setHeadLine(cal.get(Calendar.WEEK_OF_YEAR) + ". " + res.getString(R.string.week_label));
 
     holder.headlineView.setText(item.getHeadLine());
-    holder.itemCountView.setText(res.getString(R.string.shops_label) + ": " + ((item.getSubItemCount() >= 0) ? item.getSubItemCount() : 0));
+    holder.itemCountView.setText(res.getString(R.string.shops_label) + ": "
+                                 + ((item.getSubItemCount() >= 0) ? item.getSubItemCount() : 0));
 
     // "calculate" the start date of the week
     Calendar first = (Calendar) cal.clone();

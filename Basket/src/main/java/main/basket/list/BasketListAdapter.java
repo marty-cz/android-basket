@@ -5,15 +5,12 @@ import android.content.res.Resources;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import main.basket.R;
 import main.basket.list.structure.BasketListItem;
-import main.basket.list.structure.ShopListItem;
 
 /** Created by martin on 27.7.13. */
 public class BasketListAdapter extends BaseListAdapter {
@@ -40,7 +37,7 @@ public class BasketListAdapter extends BaseListAdapter {
     Resources res = layoutInflater.getContext().getResources();
 
     holder.headlineView.setText(item.getHeadLine());
-    holder.priceView.setText(String.format("%4.2f",item.getPrice()) + " Kč");
+    holder.priceView.setText(String.format("%4.2f ",item.getPrice()) + context.getString(R.string.price_unit));
     holder.buyedCheckBox.setChecked(item.isBuyed());
 
     return convertView;

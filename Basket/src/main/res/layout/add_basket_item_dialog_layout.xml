@@ -27,11 +27,10 @@
                 android:textSize="22dp"
                 android:singleLine="true"
                 android:ellipsize="end"
-                android:hint="Product"
+                android:hint="@string/product"
                 android:lines="1"
                 android:id="@+id/item_name_in"
                 android:nextFocusDown="@+id/item_price_in"/>
-
     </LinearLayout>
 
     <LinearLayout
@@ -46,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
-                android:text="Price:"
+                android:text="@string/price"
                 android:textSize="20dp"
                 android:textStyle="bold" >
         </TextView>
@@ -70,12 +69,10 @@
                 android:layout_height="fill_parent"
                 android:layout_marginLeft="-10dp"
                 android:paddingRight="5dp"
-                android:text=",- Kč"
+                android:text="@string/price_unit_all"
                 android:textSize="22dp">
         </TextView>
-
     </LinearLayout>
-
 
 
     <View
@@ -93,7 +90,7 @@
 
         <Button
                 android:id="@+id/btn_yes"
-                android:text="Yes"
+                android:text="@android:string/yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -111,9 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No"
+                android:text="@android:string/no"
                 android:background="?android:attr/selectableItemBackground" />
     </LinearLayout>
-
-
 </LinearLayout>

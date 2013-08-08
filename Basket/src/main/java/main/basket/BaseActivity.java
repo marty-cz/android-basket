@@ -1,36 +1,22 @@
 package main.basket;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 
-import main.basket.enums.ShopsEnum;
-import main.basket.helper.MainHelper;
 import main.basket.list.BaseListAdapter;
-import main.basket.list.ShopEnumListAdapter;
-import main.basket.list.ShopListAdapter;
-import main.basket.list.structure.ShopListItem;
-import main.basket.list.structure.WeekListItem;
 
 /** Created by martin on 28.7.13. */
 public abstract class BaseActivity extends Activity {
 
   protected boolean showOpEditRemove = false;
   protected BaseListAdapter adapter = null;
+  protected SimpleDateFormat df = new SimpleDateFormat("d. MMM");
   protected int selectedItem = -1;
   protected ListView listView;
 
@@ -54,8 +40,9 @@ public abstract class BaseActivity extends Activity {
 
     for (int i = 0; i < menu.size(); i++) {
       MenuItem mi = menu.getItem(i);
-      if ((mi.getItemId() == R.id.action_edit) || (mi.getItemId() == R.id.action_remove))
+      if ((mi.getItemId() == R.id.action_edit) || (mi.getItemId() == R.id.action_remove)) {
         mi.setVisible(showOpEditRemove);
+      }
     }
     return true;
   }

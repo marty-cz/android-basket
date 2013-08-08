@@ -1,35 +1,29 @@
 package main.basket.list.structure;
 
-import android.app.Activity;
-
 import java.io.Serializable;
 import java.util.Date;
 
 /** Created by martin on 27.7.13. */
-public class CommonListItem implements Serializable {
+public abstract class CommonListItem implements Serializable {
 
   protected String headLine;
-  protected int subItemCount = -1; // if -1 then not used
-  protected Date dateFrom = null;  // if null then not used
-  protected Date dateTo = null;    // if null then not used
-  protected String footLine = "";  // if empty then not used
+  protected Date dateFrom   = null;    // if null then not used
+  protected Date dateTo     = null;    // if null then not used
+  protected String footLine = "";      // if empty then not used
 
   public CommonListItem(String headLine, int subItemCount, Date dateFrom, Date dateTo) {
     this.headLine = headLine;
-    this.subItemCount = subItemCount;
     this.dateFrom = dateFrom;
     this.dateTo = dateTo;
   }
 
-  public CommonListItem(String headLine, int subItemCount, Date dateFrom) {
+  public CommonListItem(String headLine, Date dateFrom) {
     this.headLine = headLine;
-    this.subItemCount = subItemCount;
     this.dateFrom = dateFrom;
   }
 
-  public CommonListItem(String headLine, int subItemCount) {
+  public CommonListItem(String headLine) {
     this.headLine = headLine;
-    this.subItemCount = subItemCount;
   }
 
   public CommonListItem(String headLine, String footLine) {
@@ -53,13 +47,7 @@ public class CommonListItem implements Serializable {
     this.footLine = footLine;
   }
 
-  public int getSubItemCount() {
-    return subItemCount;
-  }
-
-  public void setSubItemCount(int subItemCount) {
-    this.subItemCount = subItemCount;
-  }
+  public abstract int getSubItemCount();
 
   public Date getDateFrom() {
     return dateFrom;
@@ -83,9 +71,6 @@ public class CommonListItem implements Serializable {
     if (footLine != "") {
       res += ", footLine='" + footLine + '\'';
     } else {
-      if (subItemCount >= 0) {
-        res += ", subItemCount=" + subItemCount;
-      }
       if (dateFrom != null) {
         res += ", dateFrom=" + dateFrom;
       }

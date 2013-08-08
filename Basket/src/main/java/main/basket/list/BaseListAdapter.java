@@ -1,29 +1,25 @@
 package main.basket.list;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-
-import main.basket.R;
-import main.basket.list.structure.WeekListItem;
 
 /** Created by martin on 27.7.13. */
 public abstract class BaseListAdapter extends BaseAdapter {
 
   protected ArrayList<?> listData;
+  protected Context context;
   protected LayoutInflater layoutInflater;
   protected SimpleDateFormat df = new SimpleDateFormat("dd. MMM yy");
 
   public BaseListAdapter(Context context, ArrayList<?> listData) {
     this.listData = listData;
+    this.context = context;
     layoutInflater = LayoutInflater.from(context);
   }
 

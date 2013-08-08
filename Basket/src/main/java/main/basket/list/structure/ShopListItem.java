@@ -42,11 +42,7 @@ public class ShopListItem extends CommonListItem implements Serializable {
   public boolean addBasketItem(BasketListItem item) {
     return basket.add(item);
   }
-  /*
-    public boolean addBasketItem(int location, BasketListItem item) {
-      return basket.add(location, item);
-    }
-  */
+
   public boolean removeBasketItem(BasketListItem item) {
     return basket.remove(item);
   }
@@ -58,9 +54,5 @@ public class ShopListItem extends CommonListItem implements Serializable {
   @Override
   public int getSubItemCount() {
     return (basket != null) ? basket.size() : 0;
-  }
-
-  @Override
-  public void setSubItemCount(int subItemCount) {
   }
 }

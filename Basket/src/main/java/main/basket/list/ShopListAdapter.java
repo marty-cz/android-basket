@@ -2,14 +2,11 @@ package main.basket.list;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -29,9 +26,9 @@ public class ShopListAdapter extends BaseListAdapter {
       convertView = layoutInflater.inflate(R.layout.shop_row_list_view_layout, null);
       holder = new ViewHolder();
       holder.iconView      = (ImageView) convertView.findViewById(R.id.shop_icon);
-      holder.headlineView  = (TextView) convertView.findViewById(R.id.title);
-      holder.itemCountView = (TextView) convertView.findViewById(R.id.item_count);
-      holder.dateView      = (TextView) convertView.findViewById(R.id.date);
+      holder.headlineView  = (TextView)  convertView.findViewById(R.id.title);
+      holder.itemCountView = (TextView)  convertView.findViewById(R.id.item_count);
+      holder.dateView      = (TextView)  convertView.findViewById(R.id.date);
       convertView.setTag(holder);
     } else {
       holder = (ViewHolder) convertView.getTag();
@@ -41,7 +38,7 @@ public class ShopListAdapter extends BaseListAdapter {
 
     if (item.getDateFrom() == null)
       return convertView;
-    // set the end date
+      // set the end date
     if (item.getDateTo() == null) {
       // and add six days
       Calendar cal = Calendar.getInstance();

@@ -31,4 +31,9 @@ public class BasketListItem extends CommonListItem {
   public void setBuyed(boolean buyed) {
     this.buyed = buyed;
   }
+
+  @Override
+  public int getSubItemCount() {
+    return -1;
+  }
 }

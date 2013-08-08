@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="act_week">Weeks</string>
+    <string name="act_shop">Shops</string>
+    <string name="act_basket">Basket</string>
     <string name="app_name">Basket</string>
     <string name="action_settings">Settings</string>
+    <string name="action_download">Download data</string>
+    <string name="action_upload">Upload data</string>
     <string name="action_remove">Remove</string>
     <string name="action_add">Add</string>
     <string name="action_edit">Edit</string>
@@ -10,5 +15,28 @@
     <string name="shops_label">Shops</string>
     <string name="items_label">Items</string>
     <string name="pick_date">Pick</string>
+    <string name="are_u_sure">Are you sure?</string>
+    <string name="choose_shop">Choose shop</string>
+    <string name="sync_ok">Successfully synchronized</string>
+    <string name="down_ok">Successfully downloaded</string>
+    <string name="op_ok">Successfully uploaded</string>
+    <string name="save_ok">Successfully saved</string>
+    <string name="load_ok">Successfully loaded</string>
+    <string name="in">in</string>
+    <string name="serializing">Serializing...</string>
+    <string name="deserializing">Deserializing...</string>
+    <string name="uploading">Uploading...</string>
+    <string name="downloading">Downloading...</string>
+    <string name="sync">Synchronization</string>
+    <string name="add_product">Add product</string>
+    <string name="edit_product">Edit product</string>
+    <string name="err_empty_product">Product cannot be empty</string>
+    <string name="err_unknown_result">Unknown return value of synchronization</string>
+    <string name="err_price_num">Price is not valid number</string>
+    <string name="error">Error</string>
+    <string name="price_unit">€</string>
+    <string name="price_unit_all">,- €</string>
+    <string name="product">Product</string>
+    <string name="price">Price:</string>
 
 </resources>

@@ -16,7 +16,18 @@ import java.io.OutputStreamWriter;
 /** Created by martin on 6.8.13. */
 public class Serializer {
 
+  private static Serializer instance;
   protected String errString = "";
+
+  private Serializer() {
+  }
+
+  public static Serializer getInstance() {
+    if (instance == null) {
+      instance = new Serializer();
+    }
+    return instance;
+  }
 
   public String getErrString() {
     return errString;
@@ -32,10 +43,8 @@ public class Serializer {
       gson.toJson(obj, clazz, writer);
       writer.close();
       return true;
-    } catch (JsonIOException e) {
-      errString = e.getMessage();
-    } catch (IOException e) {
-      errString = e.getMessage();
+    } catch (JsonIOException | IOException e) {
+      errString = e.getLocalizedMessage();
     }
     return false;
   }
@@ -45,12 +54,8 @@ public class Serializer {
     try {
       reader = new JsonReader(new FileReader(filePath));
       return new Gson().fromJson(reader, clazz);
-    } catch (JsonSyntaxException e) {
-      errString = e.getMessage();
-    } catch (JsonIOException e) {
-      errString = e.getMessage();
-    } catch (FileNotFoundException e) {
-      errString = e.getMessage();
+    } catch (JsonSyntaxException | JsonIOException | FileNotFoundException e) {
+      errString = e.getLocalizedMessage();
     }
     return null;
   }

@@ -27,11 +27,7 @@ public class StructureWrapper implements Serializable {
   public boolean addWeek(WeekListItem item) {
     return weeks.add(item);
   }
-  /*
-    public boolean addWeek(int location, WeekListItem item) {
-      return weeks.add(location, item);
-    }
-  */
+
   public boolean removeWeek(WeekListItem item) {
     return weeks.remove(item);
   }

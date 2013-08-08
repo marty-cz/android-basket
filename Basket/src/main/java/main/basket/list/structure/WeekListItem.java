@@ -2,7 +2,6 @@ package main.basket.list.structure;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Date;
 
 /** Created by martin on 28.7.13. */
@@ -15,7 +14,7 @@ public class WeekListItem extends CommonListItem implements Serializable {
   }
 
   public WeekListItem(String headLine, ArrayList<ShopListItem> shops, Date dateFrom) {
-    super(headLine, ((shops != null) ? shops.size() : 0), dateFrom);
+    super(headLine, dateFrom);
     this.shops = (shops != null) ? shops : new ArrayList<ShopListItem>();
   }
 
@@ -30,11 +29,7 @@ public class WeekListItem extends CommonListItem implements Serializable {
   public boolean addShop(ShopListItem item) {
     return shops.add(item);
   }
-/*
-  public boolean addShop(int location, ShopListItem item) {
-    return shops.add(location, item);
-  }
-*/
+
   public boolean removeShop(ShopListItem item) {
     return shops.remove(item);
   }
@@ -46,10 +41,6 @@ public class WeekListItem extends CommonListItem implements Serializable {
   @Override
   public int getSubItemCount() {
     return (shops != null) ? shops.size() : 0;
-  }
-
-  @Override
-  public void setSubItemCount(int subItemCount) {
   }
 
 }

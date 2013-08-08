@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/toast_layout_root"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:layout_gravity="center_vertical"
+              android:gravity="center_vertical"
+              android:padding="11dp"
+              android:background="@drawable/container_dropshadow">
+
+    <ImageView android:id="@+id/image"
+               android:src="@drawable/ic_thumb_up"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_vertical"
+               android:layout_marginRight="8dp"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  >
+        <TextView android:id="@+id/text_first"
+                  android:gravity="left|center_vertical"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textAppearance="@android:style/TextAppearance.Small"
+                  android:textColor="#7FFF00"
+                  android:shadowColor="#C0000000"
+                  android:shadowRadius="2"/>
+
+        <TextView android:id="@+id/text"
+                  android:gravity="left|center_vertical"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textAppearance="@android:style/TextAppearance.Small"
+                  android:textColor="@android:color/white"
+                  android:shadowColor="#C0000000"
+                  android:shadowRadius="2"/>
+    </LinearLayout>
+
+</LinearLayout>

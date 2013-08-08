@@ -7,15 +7,11 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import main.basket.R;
-import main.basket.enums.ShopsEnum;
 import main.basket.helper.DecimalDigitsInputFilter;
 import main.basket.list.structure.BasketListItem;
 
@@ -30,7 +26,6 @@ public class AddBasketItemDialog extends Dialog implements android.view.View.OnC
 
   public AddBasketItemDialog(Activity a, BasketListItem item, int theme) {
     super(a, theme);
-    // TODO Auto-generated constructor stub
     this.c = a;
     this.item = item;
   }
@@ -46,8 +41,7 @@ public class AddBasketItemDialog extends Dialog implements android.view.View.OnC
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-   // requestWindowFeature(Window.FEATURE_NO_TITLE);
-    setTitle((item == null) ? "Add Product" : "Edit Product");
+    setTitle((item == null) ? R.string.add_product : R.string.edit_product);
     setContentView(R.layout.add_basket_item_dialog_layout);
 
     yes = (Button) findViewById(R.id.btn_yes);
@@ -87,17 +81,17 @@ public class AddBasketItemDialog extends Dialog implements android.view.View.OnC
             item.setHeadLine(nameView.getText().toString().trim());
             item.setPrice(price);
           } else {
-            err = "Product cannot be empty";
+            err = getContext().getString(R.string.err_empty_product);
           }
         } catch (Exception e) {
-          err = "Price is not valid number";
+          err = getContext().getString(R.string.err_price_num);
         }
         if (err.length() > 0) {
           new AlertDialog.Builder(c)
-              .setTitle("Error")
+              .setTitle(R.string.error)
               .setMessage(err)
               .setIcon(android.R.drawable.stat_notify_error)
-              .setPositiveButton("Yes",
+              .setPositiveButton(android.R.string.ok,
                   new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog,

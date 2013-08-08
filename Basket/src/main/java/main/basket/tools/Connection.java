@@ -1,113 +1,154 @@
 package main.basket.tools;
 
 import java.io.BufferedInputStream;
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
 /** Created by martin on 5.8.13. */
 public class Connection {
 
-  public static void receiveFile(String filePath) {
-    try {
-      URL url = new URL("http://www.stud.fit.vutbr.cz/~xbrazd14/resources/basket.json");
-      URLConnection connection = url.openConnection();
-      connection.connect();
-      // this will be useful so that you can show a typical 0-100% progress bar
-      int fileLength = connection.getContentLength();
+  private static Connection instance;
+  private int responseCode;
+  private String responseStr;
 
-      // download the file
-      InputStream input = new BufferedInputStream(url.openStream());
-      OutputStream output = new FileOutputStream(filePath);
+  public static final String URL_SERVER        = "http://www.stud.fit.vutbr.cz/~xbrazd14/";
+  public static final String URL_UPLOADER      = URL_SERVER + "uploader.php";
+  public static final String URL_DOWNLOAD_FILE = URL_SERVER + "resources/basket.json";
+  public static final String CRLF        = "\r\n";
+  public static final String TWO_HYPHNES = "--";
+  public static final String BOUNDARY    = "*****";
+  public static final int BUFFER_SIZE    = 1024;
 
-      byte data[] = new byte[1024];
-      long total = 0;
-      int count;
-      while ((count = input.read(data)) != -1) {
-        total += count;
-        // publishing the progress....
-    //    publishProgress((int) (total * 100 / fileLength));
-        output.write(data, 0, count);
-      }
-
-      output.flush();
-      output.close();
-      input.close();
-    } catch (Exception e) {
-    }
+  private Connection() {
   }
 
-  public static void sendFile(String filePath) {
-    HttpURLConnection connection  = null;
-    DataOutputStream outputStream = null;
-    DataInputStream inputStream   = null;
+  public static Connection getInstance() {
+    if (instance == null) {
+      instance = new Connection();
+    }
+    return instance;
+  }
 
-    String urlServer = "http://www.stud.fit.vutbr.cz/~xbrazd14/uploader.php";
-    String lineEnd = "\r\n";
-    String twoHyphens = "--";
-    String boundary =  "*****";
+  public int getResponseCode() {
+    return responseCode;
+  }
 
-    int bytesRead, bytesAvailable, bufferSize;
+  public String getResponseStr() {
+    return responseStr;
+  }
+
+  public boolean receiveFile(String filePath, FileConnectionTask progress) {
+    URLConnection connection            = null;
+    FileOutputStream fileOutputStream   = null;
+    BufferedInputStream inputStream     = null;
     byte[] buffer;
-    int maxBufferSize = 1*1024*1024;
 
     try {
-      FileInputStream fileInputStream = new FileInputStream(new File(filePath) );
+      URL url = new URL(URL_DOWNLOAD_FILE);
+      connection = url.openConnection();
+      connection.connect();
+        // Prepare download the file
+      inputStream      = new BufferedInputStream(url.openStream());
+      fileOutputStream = new FileOutputStream(filePath);
+      buffer = new byte[BUFFER_SIZE];
+      int fileLength   = connection.getContentLength();
+        // Downloading the file
+      int total = 0;
+      int count;
+      progress.setProgress(0);
+      progress.setMax(fileLength/1024);
+      progress.setUnit("KiB");
+      while ((count = inputStream.read(buffer)) != -1) {
+        fileOutputStream.write(buffer, 0, count);
+        total += count;
+        progress.setProgress(total/1024);
+      }
+        // close all streams
+      fileOutputStream.flush();
+      fileOutputStream.close();
+      inputStream.close();
+        // result codes
+      responseCode = 0;
+      responseStr  = "Succesfully downloaded...";
+      return true;
+    } catch (IOException e) {
+      responseCode = -1;
+      responseStr  = e.getLocalizedMessage();
+    }
+    return false;
+  }
 
-      URL url = new URL(urlServer);
+  public boolean sendFile(String filePath, FileConnectionTask progress) {
+    HttpURLConnection connection    = null;
+    DataOutputStream outputStream   = null;
+    FileInputStream fileInputStream = null;
+    int bytesRead, bytesAvailable, bufferSize;
+    byte[] buffer;
+
+    try {
+      fileInputStream = new FileInputStream(new File(filePath));
+
+      URL url = new URL(URL_UPLOADER);
       connection = (HttpURLConnection) url.openConnection();
-
-// Allow Inputs & Outputs
+        // Allow Inputs & Outputs
       connection.setDoInput(true);
       connection.setDoOutput(true);
       connection.setUseCaches(false);
-
-// Enable POST method
+        // Enable POST method
       connection.setRequestMethod("POST");
-
       connection.setRequestProperty("Connection", "Keep-Alive");
-      connection.setRequestProperty("Content-Type", "multipart/form-data;boundary="+boundary);
-
+      connection.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + BOUNDARY);
+        // Prepare stream to file upload
       outputStream = new DataOutputStream( connection.getOutputStream() );
-      outputStream.writeBytes(twoHyphens + boundary + lineEnd);
-      outputStream.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\"" + filePath +"\"" + lineEnd);
-      outputStream.writeBytes(lineEnd);
-
+      outputStream.writeBytes(TWO_HYPHNES + BOUNDARY + CRLF);
+      outputStream.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\"" + filePath +"\"" + CRLF);
+      outputStream.writeBytes(CRLF);
+        // Prepare send file
       bytesAvailable = fileInputStream.available();
-      bufferSize = Math.min(bytesAvailable, maxBufferSize);
+      bufferSize = Math.min(bytesAvailable, BUFFER_SIZE);
       buffer = new byte[bufferSize];
-
-// Read file
+      int total = 0;
+      int fileLength = bytesAvailable;
       bytesRead = fileInputStream.read(buffer, 0, bufferSize);
-
+        // Sending file cycle
+      progress.setProgress(0);
+      progress.setMax(fileLength/1024);
+      progress.setUnit("KiB");
       while (bytesRead > 0) {
         outputStream.write(buffer, 0, bufferSize);
+
+        total += bytesRead;
+        progress.setProgress(total/1024);
+
         bytesAvailable = fileInputStream.available();
-        bufferSize = Math.min(bytesAvailable, maxBufferSize);
+        bufferSize = Math.min(bytesAvailable, BUFFER_SIZE);
         bytesRead = fileInputStream.read(buffer, 0, bufferSize);
       }
 
-      outputStream.writeBytes(lineEnd);
-      outputStream.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
-
-// Responses from the server (code and message)
-      int serverResponseCode = connection.getResponseCode();
-      String serverResponseMessage = connection.getResponseMessage();
-
+      outputStream.writeBytes(CRLF);
+      outputStream.writeBytes(TWO_HYPHNES + BOUNDARY + TWO_HYPHNES + CRLF);
+        // Responses from the server (code and message)
+      responseCode = connection.getResponseCode();
+      responseStr  = connection.getResponseMessage();
+        // close all streams
       fileInputStream.close();
       outputStream.flush();
       outputStream.close();
+      return true;
     }
-    catch (Exception ex) {
-//Exception handling
+    catch (IOException e) { //Exception handling
+      responseCode = -1;
+      responseStr  = e.getLocalizedMessage();
     }
+    return false;
   }
 
 }

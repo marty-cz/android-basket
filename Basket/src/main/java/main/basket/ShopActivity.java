@@ -27,7 +27,13 @@ import main.basket.list.structure.WeekListItem;
 public class ShopActivity extends BaseActivity {
 
   private WeekListItem week;
-  protected SimpleDateFormat df = new SimpleDateFormat("d. MMM");
+
+  protected void setShops(ArrayList<ShopListItem> shops) {
+    week.setShops((ArrayList<ShopListItem>) validateAndSortList(
+        (shops == null) ? new ArrayList<ShopListAdapter>() : shops) );
+    adapter.setListData(week.getShops());
+    adapter.notifyDataSetChanged();
+  }
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -39,10 +45,6 @@ public class ShopActivity extends BaseActivity {
     TextView tv = (TextView) findViewById(R.id.position_label);
     tv.setText(week.getHeadLine() + " (" + df.format(week.getDateFrom().getTime())
         + " - " + df.format(week.getDateTo().getTime()) + ")");
-
-    Calendar cal = Calendar.getInstance();
-    week.addShop(new ShopListItem(ShopsEnum.SHOP_INTERSPAR, cal.getTime(), null));
-    week.addShop(new ShopListItem(ShopsEnum.SHOP_TESCO, cal.getTime(), null));
 
     week.setShops((ArrayList<ShopListItem>) validateAndSortList(week.getShops()));
 
@@ -96,7 +98,7 @@ public class ShopActivity extends BaseActivity {
     shopAdapter.getListData().removeAll(rmList);
 
     AlertDialog.Builder b = new AlertDialog.Builder(this);
-    b.setTitle("Choose shop");
+    b.setTitle(R.string.choose_shop);
     b.setAdapter(shopAdapter, new DialogInterface.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialog, int which) {
@@ -110,9 +112,7 @@ public class ShopActivity extends BaseActivity {
 
         ShopListItem item = new ShopListItem(shop, cal.getTime(), null);
         week.addShop(item);
-        week.setShops((ArrayList<ShopListItem>) validateAndSortList(week.getShops()));
-        adapter.setListData(week.getShops());
-        listView.setAdapter(adapter);
+        setShops(week.getShops());
 
         listView.setItemChecked(week.getShops().indexOf(item), true);
         showOpEditRemove = true;
@@ -126,15 +126,14 @@ public class ShopActivity extends BaseActivity {
   @Override
   protected void removeButtonClick() {
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setMessage("Are you sure?")
-        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+    builder.setMessage(R.string.are_u_sure)
+        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
           @Override
           public void onClick(DialogInterface dialog, int which) {
             int i = listView.getCheckedItemPosition();
             if (i >= 0) {
               week.removeShop(i);
-              adapter.setListData(week.getShops());
-              listView.setAdapter(adapter);
+              setShops(week.getShops());
               int size = week.getShops().size();
               if (size > 0) {
                 if (i >= size) {
@@ -149,7 +148,7 @@ public class ShopActivity extends BaseActivity {
             }
           }
         })
-        .setNegativeButton("No", null)
+        .setNegativeButton(android.R.string.no, null)
         .show();
   }
 

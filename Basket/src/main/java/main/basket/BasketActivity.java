@@ -1,8 +1,6 @@
 package main.basket;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +16,6 @@ import java.util.Comparator;
 import main.basket.dialogs.AddBasketItemDialog;
 import main.basket.helper.MainHelper;
 import main.basket.list.BasketListAdapter;
-import main.basket.list.ShopListAdapter;
 import main.basket.list.structure.BasketListItem;
 import main.basket.list.structure.ShopListItem;
 
@@ -26,7 +23,13 @@ import main.basket.list.structure.ShopListItem;
 public class BasketActivity extends BaseActivity {
 
   protected ShopListItem shop;
-  protected SimpleDateFormat df = new SimpleDateFormat("d. MMM");
+
+  protected void setBasket(ArrayList<BasketListItem> basket) {
+    shop.setBasket((ArrayList<BasketListItem>) validateAndSortList(
+        (basket == null) ? new ArrayList<BasketListItem>() : basket) );
+    adapter.setListData(shop.getBasket());
+    adapter.notifyDataSetChanged();
+  }
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -40,8 +43,7 @@ public class BasketActivity extends BaseActivity {
     tv.setText(shop.getHeadLine() + " (" + df.format(shop.getDateFrom().getTime())
         + " - " + df.format(shop.getDateTo().getTime()) + ")");
 
-    shop.addBasketItem(new BasketListItem("Test", 5.90));
-    shop.addBasketItem(new BasketListItem("test2", 1.99, true));
+    shop.setBasket((ArrayList<BasketListItem>) validateAndSortList(shop.getBasket()));
 
     listView = (ListView) findViewById(R.id.lv_basket);
     adapter = new BasketListAdapter(BasketActivity.this, shop.getBasket());
@@ -70,7 +72,6 @@ public class BasketActivity extends BaseActivity {
 
   @Override
   protected void editButtonClick() {
-
     int i = listView.getCheckedItemPosition();
     if (i >= 0) {
       final BasketListItem item = shop.getBasket().get(i);
@@ -86,11 +87,8 @@ public class BasketActivity extends BaseActivity {
       @Override
       public void onClick(DialogInterface dialog, int which) {
         BasketListItem item = ((AddBasketItemDialog) dialog).getBasketItem();
-
         shop.addBasketItem(item);
-        shop.setBasket((ArrayList<BasketListItem>) validateAndSortList(shop.getBasket()));
-        adapter.setListData(shop.getBasket());
-        listView.setAdapter(adapter);
+        setBasket(shop.getBasket());
 
         listView.setItemChecked(shop.getBasket().indexOf(item), true);
         showOpEditRemove = true;
@@ -103,15 +101,14 @@ public class BasketActivity extends BaseActivity {
   @Override
   protected void removeButtonClick() {
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setMessage("Are you sure?")
-        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+    builder.setMessage(R.string.are_u_sure)
+        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
           @Override
           public void onClick(DialogInterface dialog, int which) {
             int i = listView.getCheckedItemPosition();
             if (i >= 0) {
               shop.removeBasketItem(i);
-              adapter.setListData(shop.getBasket());
-              listView.setAdapter(adapter);
+              setBasket(shop.getBasket());
               int size = shop.getBasket().size();
               if (size > 0) {
                 if (i >= size) {
@@ -126,7 +123,7 @@ public class BasketActivity extends BaseActivity {
             }
           }
         })
-        .setNegativeButton("No", null)
+        .setNegativeButton(android.R.string.no, null)
         .show();
   }
 
@@ -146,4 +143,5 @@ public class BasketActivity extends BaseActivity {
     });
     return list;
   }
+
 }
