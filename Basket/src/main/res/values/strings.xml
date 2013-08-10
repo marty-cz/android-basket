@@ -33,6 +33,7 @@
     <string name="err_empty_product">Product cannot be empty</string>
     <string name="err_unknown_result">Unknown return value of synchronization</string>
     <string name="err_price_num">Price is not valid number</string>
+    <string name="err_dir_download">Cannot find/create download folder</string>
     <string name="error">Error</string>
     <string name="price_unit">€</string>
     <string name="price_unit_all">,- €</string>

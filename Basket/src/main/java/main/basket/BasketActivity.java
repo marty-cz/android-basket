@@ -49,6 +49,7 @@ public class BasketActivity extends BaseActivity {
     adapter = new BasketListAdapter(BasketActivity.this, shop.getBasket());
 
     listView.setAdapter(adapter);
+    listView.setItemsCanFocus(true);
     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -7,19 +7,23 @@
                 android:layout_gravity="center_vertical"
                 android:padding="5dip"
                 android:background="?android:attr/activatedBackgroundIndicator">
-           <!--     android:background="?android:attr/activatedBackgroundIndicator"> -->
 
 
     <CheckBox
             android:id="@+id/buyed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_vertical"
-            android:scaleY="1.7"
-            android:scaleX="1.7"
+            android:gravity="center_horizontal"
+            android:focusable="false"
+            android:clickable="true"
             android:layout_alignParentLeft="true"
-            />
+            android:button="@null"
+            android:height="40dp"
+            android:width="40dp"
+            android:background="@drawable/custom_cb"
+            android:checked="false"/>
+    <!--  android:scaleY="1.7"
+      android:scaleX="1.7"  -->
 
 
     <RelativeLayout

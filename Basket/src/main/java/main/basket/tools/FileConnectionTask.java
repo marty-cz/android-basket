@@ -2,10 +2,15 @@ package main.basket.tools;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.text.Html;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.text.NumberFormat;
 
@@ -36,6 +41,15 @@ public class FileConnectionTask extends AsyncTask<String, Integer, Object> {
   @Override
   protected void onPreExecute() {
     dialog = new ProgressDialog(srcActivity);
+    Drawable mDrawable = srcActivity.getResources().getDrawable(android.R.drawable.ic_popup_sync);
+  //  TextView tv = (TextView) dialog.findViewById(android.R.id.title);
+    // color = CurrentColor - (WhiteColor+1)
+    // color = 16711680-(17677215+1)  => color < 0 !!
+    // CurentColor = color + (WhiteColor+1)
+  //  int color = tv.getCurrentTextColor() + (17677215 + 1);
+    mDrawable.setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
+
+    dialog.setIcon(mDrawable);
     dialog.setTitle(srcActivity.getString(R.string.sync));
     dialog.setMessage(message);
     dialog.setIndeterminate(false);

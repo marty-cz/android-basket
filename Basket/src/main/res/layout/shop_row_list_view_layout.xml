@@ -15,7 +15,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:contentDescription="Shop icon"
-            ></ImageView>
+            android:layout_marginRight="5dp"></ImageView>
 
     <RelativeLayout
             android:layout_width="fill_parent"

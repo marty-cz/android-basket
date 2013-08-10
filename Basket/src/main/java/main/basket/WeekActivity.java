@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.DatePicker;
 import android.widget.ListView;
 import android.content.Intent;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -31,6 +33,7 @@ import main.basket.tools.Serializer;
 public class WeekActivity extends BaseActivity {
 
   public static StructureWrapper weeks = null;
+  public static String basketFileName = "basket.json";
 
   public void setWeeks(StructureWrapper weeks) {
     WeekActivity.weeks = (weeks == null) ? new StructureWrapper() : weeks;
@@ -68,7 +71,7 @@ public class WeekActivity extends BaseActivity {
         MainHelper.invalidateOptionsMenu(WeekActivity.this);
       }
     });
-    new FileConnectionTask(WeekActivity.this, false, true).execute("/sdcard/Download/basket.json");
+    new FileConnectionTask(WeekActivity.this, false, true).execute(getDownloadStorageDirPath() + "/" + basketFileName);
   }
 
   /** Called when the user clicks the Add button */
@@ -204,14 +207,24 @@ public class WeekActivity extends BaseActivity {
     // Handle item selection
     switch (item.getItemId()) {
       case R.id.action_upload:
-        new FileConnectionTask(WeekActivity.this,  true, false).execute("/sdcard/Download/basket.json");
+        new FileConnectionTask(WeekActivity.this,  true, false).execute(getDownloadStorageDirPath() + "/" + basketFileName);
         return true;
       case R.id.action_download:
-        new FileConnectionTask(WeekActivity.this, false, false).execute("/sdcard/Download/basket.json");
+        new FileConnectionTask(WeekActivity.this, false, false).execute(getDownloadStorageDirPath() + "/" + basketFileName);
         return true;
       default:
         return super.onOptionsItemSelected(item);
     }
+  }
+
+  protected String getDownloadStorageDirPath() {
+    File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+
+    if (file.exists() || file.mkdirs()) {
+      return file.getAbsolutePath();
+    }
+    MainHelper.showCustomToast(WeekActivity.this, getString(R.string.err_dir_download), false);
+    return "";
   }
 
 }

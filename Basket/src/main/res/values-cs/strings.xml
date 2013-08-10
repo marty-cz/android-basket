@@ -33,6 +33,7 @@
     <string name="err_empty_product">Název výrobku nesmí být prázdný</string>
     <string name="err_unknown_result">Neznámá návratová hodnota procesu synchronizace</string>
     <string name="err_price_num">Číslo u ceny není platné</string>
+    <string name="err_dir_download">Nelze nalézt/vytvořit složku pro stahování</string>
     <string name="error">Chyba</string>
     <string name="price_unit">Kč</string>
     <string name="price_unit_all">,- Kč</string>

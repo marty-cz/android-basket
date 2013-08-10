@@ -16,7 +16,9 @@
         android:textColor="@drawable/list_item_text_selector"
         android:textStyle="bold"
         android:typeface="sans"
-        android:textSize="24sp"/>
+        android:textSize="27sp"
+        android:layout_marginTop="-5dp"
+        android:layout_marginBottom="-2dp"/>
 
 <TextView
         android:id="@+id/item_count"

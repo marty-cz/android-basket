@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:minHeight="38dp"
+                android:minHeight="40dp"
                 android:orientation="horizontal">
            <!--     android:background="?android:attr/activatedBackgroundIndicator"> -->
 
@@ -13,13 +12,13 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_gravity="center"
-            android:contentDescription="Shop icon"
-            ></ImageView>
+            android:layout_marginLeft="5dp"
+            android:contentDescription="Shop icon" />
 
     <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="5dp"
             android:minHeight="38dp"
             android:orientation="horizontal">
 

@@ -6,11 +6,12 @@ import main.basket.R;
 /** Created by martin on 28.7.13. */
 public enum ShopsEnum {
 
-  SHOP_INTERSPAR("Interspar", R.drawable.ic_launcher, Calendar.WEDNESDAY),
-  SHOP_TESCO("Tesco", R.drawable.ic_launcher, Calendar.WEDNESDAY),
-  SHOP_BILLA("Billa", R.drawable.ic_launcher, Calendar.WEDNESDAY),
-  SHOP_LIDL("Lidl", R.drawable.ic_launcher, Calendar.MONDAY),
-  SHOP_KAUFLAND("Kaufland", R.drawable.ic_launcher, Calendar.THURSDAY);
+  SHOP_INTERSPAR("Interspar", R.drawable.interspar, Calendar.WEDNESDAY),
+  SHOP_TESCO(    "Tesco",     R.drawable.tesco,     Calendar.WEDNESDAY),
+  SHOP_BILLA(    "Billa",     R.drawable.billa,     Calendar.WEDNESDAY),
+  SHOP_ALBERT(   "Albert",    R.drawable.albert,    Calendar.WEDNESDAY),
+  SHOP_LIDL(     "Lidl",      R.drawable.lidl,      Calendar.MONDAY),
+  SHOP_KAUFLAND( "Kaufland",  R.drawable.kaufland,  Calendar.THURSDAY);
 
   private String name;
   private int iconId;
