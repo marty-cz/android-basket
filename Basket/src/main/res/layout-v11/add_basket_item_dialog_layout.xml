@@ -78,32 +78,37 @@
     <View
             android:layout_width="fill_parent"
             android:layout_height="1dip"
+            android:background="?android:attr/dividerVertical"
             android:layout_alignParentTop="true"/>
 
     <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:measureWithLargestChild="true">
+            android:measureWithLargestChild="true"
+            style="?android:attr/buttonBarStyle">
 
         <Button
                 android:id="@+id/btn_yes"
                 android:text="@android:string/yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground" />
         <View
                 android:id="@+id/ViewColorPickerHelper"
                 android:layout_width="1dip"
                 android:layout_height="fill_parent"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"/>
+                android:layout_alignParentBottom="true"
+                android:background="?android:attr/dividerHorizontal"/>
 
         <Button
                 android:id="@+id/btn_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@android:string/no"/>
+                android:text="@android:string/no"
+                android:background="?android:attr/selectableItemBackground" />
     </LinearLayout>
 </LinearLayout>

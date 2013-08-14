@@ -29,6 +29,7 @@
             android:id="@+id/lv_basket"
             android:layout_gravity="left|center_vertical"
             android:focusable="true"
+            android:choiceMode="singleChoice"
             android:clickable="true"
             android:listSelector="@drawable/list_selector_flatcolor"
             android:headerDividersEnabled="false"/>

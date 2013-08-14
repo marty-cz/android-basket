@@ -4,7 +4,8 @@
                 android:layout_height="wrap_content"
                 android:minHeight="50dp"
                 android:orientation="horizontal"
-                android:padding="5dip">
+                android:padding="5dip"
+                android:background="?android:attr/activatedBackgroundIndicator">
            <!--     android:background="?android:attr/activatedBackgroundIndicator"> -->
 
 

@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -52,6 +53,7 @@ public class ShopActivity extends BaseActivity {
     adapter = new ShopListAdapter(ShopActivity.this, week.getShops());
 
     listView.setAdapter(adapter);
+    listView.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

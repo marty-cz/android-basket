@@ -13,8 +13,6 @@
             android:headerDividersEnabled="false"
             android:focusable="false"
             android:clickable="false"
-            android:listSelector="@drawable/list_selector_flatcolor"/>
-    <!--
             android:choiceMode="singleChoice"
-               -->
+            android:listSelector="@drawable/list_selector_flatcolor"/>
 </LinearLayout>

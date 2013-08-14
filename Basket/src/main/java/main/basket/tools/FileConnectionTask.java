@@ -67,7 +67,7 @@ public class FileConnectionTask extends AsyncTask<String, Integer, Object> {
       if (upload) {
         connectionPart = false;
         message = srcActivity.getString(R.string.serializing);
-        srcActivity.runOnUiThread(new ChangeMsgAndStyle(message, ProgressDialog.STYLE_SPINNER));
+       srcActivity.runOnUiThread(new ChangeMsgAndStyle(message, ProgressDialog.STYLE_SPINNER));
         res = Serializer.getInstance().serializeToJson(params[0], WeekActivity.weeks, StructureWrapper.class);
         if (!save && res) {
           connectionPart = true;
@@ -99,25 +99,40 @@ public class FileConnectionTask extends AsyncTask<String, Integer, Object> {
     }
   }
 
-  public void setProgress(Integer... values) {
+  public void setProgress(final Integer... values) {
     publishProgress(values);
   }
 
-  public void setMax(int max) {
-    dialog.setMax(max);
+  public void setMax(final int max) {
+    srcActivity.runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        dialog.setMax(max);
+      }
+    });
   }
 
-  public void setUnit(String unit) {
-    if (Build.VERSION.SDK_INT >= 11) {
-      dialog.setProgressNumberFormat("%1d/%2d " + unit);
-    } else {
-      dialog.setMessage(message + " (" + srcActivity.getString(R.string.in) + " " + unit + ")");
-    }
+  public void setUnit(final String unit) {
+    srcActivity.runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        if (Build.VERSION.SDK_INT >= 11) {
+          dialog.setProgressNumberFormat("%1d/%2d " + unit);
+        } else {
+          dialog.setMessage(message + " (" + srcActivity.getString(R.string.in) + " " + unit + ")");
+        }
+      }
+    });
   }
 
   @Override
-  protected void onProgressUpdate(Integer... progress) {
-    dialog.setProgress(progress[0]);
+  protected void onProgressUpdate(final Integer... progress) {
+    srcActivity.runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        dialog.setProgress(progress[0]);
+      }
+    });
   }
 
   @Override
@@ -178,6 +193,8 @@ public class FileConnectionTask extends AsyncTask<String, Integer, Object> {
   public int getResultValue() {
     return retValue;
   }
+
+
 
   private class ChangeMsgAndStyle implements Runnable {
 

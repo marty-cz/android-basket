@@ -10,7 +10,7 @@
             android:layout_width="fill_parent"
             android:gravity="left|center_vertical"
             android:layout_height="30dp"
-            android:text="Shop (valid)"
+            android:text="Week"
             android:textSize="20dp"
             android:textStyle="bold"
             android:paddingLeft="6dp"
@@ -26,10 +26,11 @@
     <ListView
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:id="@+id/lv_basket"
+            android:id="@+id/lv_shop"
             android:layout_gravity="left|center_vertical"
-            android:focusable="true"
-            android:clickable="true"
+            android:focusable="false"
+            android:choiceMode="singleChoice"
+            android:clickable="false"
             android:listSelector="@drawable/list_selector_flatcolor"
             android:headerDividersEnabled="false"/>
 

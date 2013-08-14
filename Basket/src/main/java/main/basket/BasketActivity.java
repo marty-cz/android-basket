@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -46,6 +47,7 @@ public class BasketActivity extends BaseActivity {
     shop.setBasket((ArrayList<BasketListItem>) validateAndSortList(shop.getBasket()));
 
     listView = (ListView) findViewById(R.id.lv_basket);
+    listView.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
     adapter = new BasketListAdapter(BasketActivity.this, shop.getBasket());
 
     listView.setAdapter(adapter);
@@ -77,6 +79,12 @@ public class BasketActivity extends BaseActivity {
     if (i >= 0) {
       final BasketListItem item = shop.getBasket().get(i);
       AddBasketItemDialog dialog = new AddBasketItemDialog(this, item, R.style.DialogSlideAnim);
+      dialog.setPositiveButtonAction(new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+          setBasket(shop.getBasket());
+        }
+      });
       dialog.show();
     }
   }

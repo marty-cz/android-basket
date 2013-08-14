@@ -29,7 +29,6 @@
             android:id="@+id/lv_shop"
             android:layout_gravity="left|center_vertical"
             android:focusable="false"
-            android:choiceMode="singleChoice"
             android:clickable="false"
             android:listSelector="@drawable/list_selector_flatcolor"
             android:headerDividersEnabled="false"/>

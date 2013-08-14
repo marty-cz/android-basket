@@ -9,6 +9,7 @@ import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.ListView;
@@ -52,6 +53,7 @@ public class WeekActivity extends BaseActivity {
     adapter = new WeekListAdapter(WeekActivity.this, weeks.getWeeks());
 
     listView.setAdapter(adapter);
+    listView.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
