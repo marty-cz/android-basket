@@ -14,31 +14,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21fa7af9-fafa-4dd2-8b45-8037469ad4f6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout-v11/activity_basket.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout-v11/activity_shop.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout-v11/activity_week.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout-v11/add_basket_item_dialog_layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout-v11/basket_row_list_view_layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout-v11/shop_row_list_view_layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout-v11/week_row_list_view_layout.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Basket/src/main/res/layout/activity_main.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Basket/src/main/res/values-v10/styles.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/values-v11/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/Basket/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/java/main/basket/ShopActivity.java" afterPath="$PROJECT_DIR$/Basket/src/main/java/main/basket/ShopActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/java/main/basket/WeekActivity.java" afterPath="$PROJECT_DIR$/Basket/src/main/java/main/basket/WeekActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/layout/activity_basket.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout/activity_basket.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/layout/activity_shop.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout/activity_shop.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/layout/activity_week.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout/activity_week.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/layout/add_basket_item_dialog_layout.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout/add_basket_item_dialog_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/layout/basket_row_list_view_layout.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout/basket_row_list_view_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/values-sw600dp/dimens.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/values-sw600dp/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/values-sw720dp-land/dimens.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/values-sw720dp-land/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/drawable/list_selector_flatcolor.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/drawable/list_selector_flatcolor.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/menu/main.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/menu/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/layout/shop_row_list_view_layout.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout/shop_row_list_view_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/values/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/res/layout/week_row_list_view_layout.xml" afterPath="$PROJECT_DIR$/Basket/src/main/res/layout/week_row_list_view_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basket/src/main/main.iml" afterPath="$PROJECT_DIR$/Basket/src/main/main.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android-basket.iws" />
@@ -114,52 +91,22 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/ShopActivity.java" line="40" class="main.basket.ShopActivity" package="main.basket">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/ShopActivity.java" line="45" class="main.basket.ShopActivity" package="main.basket">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/BasketActivity.java" line="36" class="main.basket.BasketActivity" package="main.basket">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/tools/Connection.java" line="69" class="main.basket.tools.Connection" package="main.basket.tools">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/list/BasketListAdapter.java" line="41" class="main.basket.list.BasketListAdapter" package="main.basket.list">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -184,53 +131,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FileConnectionTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/tools/FileConnectionTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="15" selection-start="3997" selection-end="3997" vertical-scroll-proportion="0.0" vertical-offset="1402" max-vertical-offset="3300">
-              <folding>
-                <element signature="e#1758#1794#0" expanded="true" />
-                <element signature="e#2203#2246#0" expanded="true" />
-                <element signature="e#2536#2577#0" expanded="true" />
-                <element signature="e#2848#2891#0" expanded="true" />
-                <element signature="e#3188#3233#0" expanded="true" />
-                <element signature="e#3784#3884#0" expanded="true" />
-                <element signature="e#3877#3878#0" expanded="true" />
-                <element signature="e#4190#4224#0" expanded="true" />
-                <element signature="e#4262#4263#0" expanded="true" />
-                <element signature="e#4382#4495#0" expanded="true" />
-                <element signature="e#4488#4489#0" expanded="true" />
-                <element signature="e#5003#5042#0" expanded="true" />
-                <element signature="e#5118#5157#0" expanded="true" />
-                <element signature="e#5479#5518#0" expanded="true" />
-                <element signature="e#5601#5640#0" expanded="true" />
-                <element signature="e#5703#5742#0" expanded="true" />
-                <element signature="e#5949#5988#0" expanded="true" />
-                <element signature="e#6122#6161#0" expanded="true" />
-                <element signature="e#6430#6480#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/tools/Connection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="23" selection-start="2430" selection-end="2430" vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="2250">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BasketActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/BasketActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="38" selection-start="3109" selection-end="3109" vertical-scroll-proportion="0.36885247" vertical-offset="720" max-vertical-offset="1920">
+            <state line="31" column="35" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.034836065" vertical-offset="448" max-vertical-offset="2145">
               <folding>
-                <element signature="e#2948#3127#0" expanded="true" />
-                <element signature="e#3118#3119#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasketListAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/list/BasketListAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="13" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="810">
+              <folding>
+                <element signature="e#1505#1543#0" expanded="true" />
+                <element signature="e#1659#1860#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/ShopActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="0" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0" vertical-offset="438" max-vertical-offset="2400">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basket_row_list_view_layout.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout/basket_row_list_view_layout.xml">
+          <provider editor-type-id="text-editor">
+            <state line="48" column="39" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_week.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout/activity_week.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="8" selection-start="673" selection-end="673" vertical-scroll-proportion="-9.230769" vertical-offset="0" max-vertical-offset="375">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -252,8 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Basket/src/main/res/layout-v11/week_row_list_view_layout.xml" />
-        <option value="$PROJECT_DIR$/Basket/src/main/res/layout-v11/activity_week.xml" />
         <option value="$PROJECT_DIR$/Basket/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/Basket/src/main/res/values-v11/colors.xml" />
         <option value="$PROJECT_DIR$/Basket/src/main/res/values/colors.xml" />
@@ -267,6 +220,8 @@
         <option value="$PROJECT_DIR$/Basket/src/main/res/layout/add_basket_item_dialog_layout.xml" />
         <option value="$PROJECT_DIR$/Basket/src/main/java/main/basket/tools/FileConnectionTask.java" />
         <option value="$PROJECT_DIR$/Basket/src/main/java/main/basket/tools/Connection.java" />
+        <option value="$PROJECT_DIR$/Basket/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/Basket/src/main/java/main/basket/list/BasketListAdapter.java" />
         <option value="$PROJECT_DIR$/Basket/src/main/java/main/basket/BasketActivity.java" />
       </list>
     </option>
@@ -275,9 +230,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
-    <option name="y" value="26" />
-    <option name="width" value="1686" />
+    <option name="y" value="25" />
+    <option name="width" value="1680" />
     <option name="height" value="1000" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -406,6 +360,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -422,6 +379,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-basket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-basket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -465,24 +454,69 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-basket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="list" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-basket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="list" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="structure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Facets" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="152" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="177" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="177" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="164" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../TestListProject" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="183" />
@@ -493,25 +527,24 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Test_device" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.SHOW" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="317" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="project.propCompiler" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="CB5122NBTV" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -800,27 +833,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="26" width="1686" height="1000" extended-state="6" />
+    <frame x="0" y="25" width="1680" height="1000" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3969555" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3969555" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20085995" sideWeight="0.14319248" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20085995" sideWeight="0.14319248" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3266979" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15432099" sideWeight="0.60211265" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19828641" sideWeight="0.6030445" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1977887" sideWeight="0.6030445" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3266979" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16646267" sideWeight="0.6721311" order="6" side_tool="false" content_ui="tabs" x="97" y="126" width="1486" height="800" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -893,97 +927,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/drawable/list_selector_flatcolor.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout-v11/week_row_list_view_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="80" selection-start="427" selection-end="427" vertical-scroll-proportion="3.5769231" vertical-offset="198" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout-v11/activity_basket.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout/activity_shop.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="37" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.6896552" vertical-offset="90" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout/activity_week.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="8" selection-start="673" selection-end="673" vertical-scroll-proportion="0.4597701" vertical-offset="0" max-vertical-offset="522">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout/shop_row_list_view_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="345" selection-end="345" vertical-scroll-proportion="-3.4615386" vertical-offset="0" max-vertical-offset="975">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout/basket_row_list_view_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="39" selection-start="1853" selection-end="1853" vertical-scroll-proportion="1.3793104" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout/activity_basket.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="36" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.68390805" vertical-offset="93" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/ShopActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="59" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="2070">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/WeekActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="33" selection-start="1782" selection-end="1842" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="2910">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Basket/src/main/res/drawable/container_dropshadow.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
@@ -1011,46 +954,116 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/tools/FileConnectionTask.java">
+    <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/tools/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="15" selection-start="3997" selection-end="3997" vertical-scroll-proportion="0.0" vertical-offset="1402" max-vertical-offset="3300">
+        <state line="78" column="23" selection-start="2430" selection-end="2430" vertical-scroll-proportion="2.142857" vertical-offset="0" max-vertical-offset="2400">
           <folding>
-            <element signature="e#1758#1794#0" expanded="true" />
-            <element signature="e#2203#2246#0" expanded="true" />
-            <element signature="e#2536#2577#0" expanded="true" />
-            <element signature="e#2848#2891#0" expanded="true" />
-            <element signature="e#3188#3233#0" expanded="true" />
-            <element signature="e#3784#3884#0" expanded="true" />
-            <element signature="e#3877#3878#0" expanded="true" />
-            <element signature="e#4190#4224#0" expanded="true" />
-            <element signature="e#4262#4263#0" expanded="true" />
-            <element signature="e#4382#4495#0" expanded="true" />
-            <element signature="e#4488#4489#0" expanded="true" />
-            <element signature="e#5003#5042#0" expanded="true" />
-            <element signature="e#5118#5157#0" expanded="true" />
-            <element signature="e#5479#5518#0" expanded="true" />
-            <element signature="e#5601#5640#0" expanded="true" />
-            <element signature="e#5703#5742#0" expanded="true" />
-            <element signature="e#5949#5988#0" expanded="true" />
-            <element signature="e#6122#6161#0" expanded="true" />
-            <element signature="e#6430#6480#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/tools/Connection.java">
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="23" selection-start="2430" selection-end="2430" vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="2250">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="546">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/tools/FileConnectionTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="15" selection-start="3997" selection-end="3997" vertical-scroll-proportion="3.0494506" vertical-offset="0" max-vertical-offset="3405">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4262#4263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="18" selection-start="113" selection-end="113" vertical-scroll-proportion="0.10948905" vertical-offset="0" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basket/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="22" selection-start="231" selection-end="231" vertical-scroll-proportion="0.1923077" vertical-offset="0" max-vertical-offset="630">
+          <folding>
+            <element signature="e#405#423#0" expanded="true" />
+            <element signature="e#558#576#0" expanded="true" />
+            <element signature="e#913#931#0" expanded="true" />
+            <element signature="e#1029#1049#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basket/src/main/main.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="546">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout/activity_week.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="8" selection-start="673" selection-end="673" vertical-scroll-proportion="-9.230769" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basket/src/main/res/layout/basket_row_list_view_layout.xml">
+      <provider editor-type-id="text-editor">
+        <state line="48" column="39" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/widget/AbsListView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="16" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.33271027" vertical-offset="362" max-vertical-offset="4590">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/list/BaseListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="25" selection-start="375" selection-end="375" vertical-scroll-proportion="0.19160584" vertical-offset="0" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/ShopActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0" vertical-offset="438" max-vertical-offset="2400">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/list/BasketListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="13" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="810">
+          <folding>
+            <element signature="e#1505#1543#0" expanded="true" />
+            <element signature="e#1659#1860#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Basket/src/main/java/main/basket/BasketActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="38" selection-start="3109" selection-end="3109" vertical-scroll-proportion="0.36885247" vertical-offset="720" max-vertical-offset="1920">
+        <state line="31" column="35" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.034836065" vertical-offset="448" max-vertical-offset="2145">
           <folding>
-            <element signature="e#2948#3127#0" expanded="true" />
-            <element signature="e#3118#3119#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
