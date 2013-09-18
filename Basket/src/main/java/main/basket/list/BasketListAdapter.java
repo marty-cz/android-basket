@@ -22,7 +22,7 @@ public class BasketListAdapter extends BaseListAdapter {
         super(context, listData);
     }
 
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
             convertView = layoutInflater.inflate(R.layout.basket_row_list_view_layout, null);
@@ -35,7 +35,7 @@ public class BasketListAdapter extends BaseListAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        final BasketListItem item = (BasketListItem) listData.get(position);
+        BasketListItem item = (BasketListItem) listData.get(position);
 
         Resources res = layoutInflater.getContext().getResources();
 
@@ -44,7 +44,7 @@ public class BasketListAdapter extends BaseListAdapter {
         holder.buyedCheckBox.setChecked(item.isBuyed());
         holder.buyedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                item.setBuyed(isChecked);
+                ((BasketListItem) listData.get(position)).setBuyed(isChecked);
             }
         });
 

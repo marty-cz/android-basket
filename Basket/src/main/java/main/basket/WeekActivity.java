@@ -28,7 +28,6 @@ import main.basket.helper.MainHelper;
 import main.basket.list.WeekListAdapter;
 import main.basket.list.structure.StructureWrapper;
 import main.basket.list.structure.WeekListItem;
-import main.basket.tools.Serializer;
 
 /** Created by martin on 27.7.13. */
 public class WeekActivity extends BaseActivity {
