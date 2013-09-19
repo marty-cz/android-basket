@@ -12,39 +12,41 @@ import java.util.ArrayList;
 import main.basket.R;
 import main.basket.enums.ShopsEnum;
 
-/** Created by martin on 27.7.13. */
+/**
+ * Created by martin on 27.7.13.
+ */
 public class ShopEnumListAdapter extends BaseListAdapter {
 
-  public ShopEnumListAdapter(Context context, ArrayList<ShopsEnum> listData) {
-    super(context, listData);
-  }
-
-  @Override
-  public View getView(int position, View convertView, ViewGroup parent) {
-    ViewHolder holder;
-    if (convertView == null) {
-      convertView = layoutInflater.inflate(R.layout.shop_enum_row_list_view_layout, null);
-      holder = new ViewHolder();
-      holder.iconView      = (ImageView) convertView.findViewById(R.id.shop_icon);
-      holder.headlineView  = (TextView)  convertView.findViewById(R.id.title);
-      convertView.setTag(holder);
-    } else {
-      holder = (ViewHolder) convertView.getTag();
+    public ShopEnumListAdapter(Context context, ArrayList<ShopsEnum> listData) {
+        super(context, listData);
     }
 
-    ShopsEnum item = (ShopsEnum) listData.get(position);
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = layoutInflater.inflate(R.layout.shop_enum_row_list_view_layout, null);
+            holder = new ViewHolder();
+            holder.iconView = (ImageView) convertView.findViewById(R.id.shop_icon);
+            holder.headlineView = (TextView) convertView.findViewById(R.id.title);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
 
-    Resources res = layoutInflater.getContext().getResources();
+        ShopsEnum item = (ShopsEnum) listData.get(position);
 
-    holder.iconView.setImageDrawable(res.getDrawable(item.getIconId()));
-    holder.headlineView.setText(item.getName());
+        Resources res = layoutInflater.getContext().getResources();
 
-    return convertView;
-  }
+        holder.iconView.setImageDrawable(res.getDrawable(item.getIconId()));
+        holder.headlineView.setText(item.getName());
 
-  static class ViewHolder {
-    ImageView iconView;
-    TextView headlineView;
-  }
+        return convertView;
+    }
+
+    static class ViewHolder {
+        ImageView iconView;
+        TextView headlineView;
+    }
 
 }

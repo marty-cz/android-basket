@@ -39,5 +39,6 @@
     <string name="price_unit_all">,- Kč</string>
     <string name="product">Výrobek</string>
     <string name="price">Cena:</string>
+    <string name="other_shop">Ostatní</string>
 
 </resources>

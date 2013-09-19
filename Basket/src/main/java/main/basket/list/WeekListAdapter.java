@@ -12,62 +12,64 @@ import java.util.Calendar;
 import main.basket.R;
 import main.basket.list.structure.WeekListItem;
 
-/** Created by martin on 27.7.13. */
+/**
+ * Created by martin on 27.7.13.
+ */
 public class WeekListAdapter extends BaseListAdapter {
 
-  public WeekListAdapter(Context context, ArrayList<WeekListItem> listData) {
-    super(context, listData);
-  }
-
-  @Override
-  public View getView(int position, View convertView, ViewGroup parent) {
-    ViewHolder holder;
-    if (convertView == null) {
-      convertView = layoutInflater.inflate(R.layout.week_row_list_view_layout, null);
-      holder = new ViewHolder();
-      holder.headlineView  = (TextView) convertView.findViewById(R.id.title);
-      holder.itemCountView = (TextView) convertView.findViewById(R.id.item_count);
-      holder.dateView      = (TextView) convertView.findViewById(R.id.date);
-      convertView.setTag(holder);
-    } else {
-      holder = (ViewHolder) convertView.getTag();
+    public WeekListAdapter(Context context, ArrayList<WeekListItem> listData) {
+        super(context, listData);
     }
 
-    WeekListItem item = (WeekListItem) listData.get(position);
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = layoutInflater.inflate(R.layout.week_row_list_view_layout, null);
+            holder = new ViewHolder();
+            holder.headlineView = (TextView) convertView.findViewById(R.id.title);
+            holder.itemCountView = (TextView) convertView.findViewById(R.id.item_count);
+            holder.dateView = (TextView) convertView.findViewById(R.id.date);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
 
-    if (item.getDateFrom() == null)
-      return convertView;
-    // set the date
-    Calendar cal = Calendar.getInstance();
-    cal.setTime(item.getDateFrom());
+        WeekListItem item = (WeekListItem) listData.get(position);
 
-    Resources res = layoutInflater.getContext().getResources();
+        if (item.getDateFrom() == null)
+            return convertView;
+        // set the date
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(item.getDateFrom());
 
-    item.setHeadLine(cal.get(Calendar.WEEK_OF_YEAR) + ". " + res.getString(R.string.week_label));
+        Resources res = layoutInflater.getContext().getResources();
 
-    holder.headlineView.setText(item.getHeadLine());
-    holder.itemCountView.setText(res.getString(R.string.shops_label) + ": "
-                                 + ((item.getSubItemCount() >= 0) ? item.getSubItemCount() : 0));
+        item.setHeadLine(cal.get(Calendar.WEEK_OF_YEAR) + ". " + res.getString(R.string.week_label));
 
-    // "calculate" the start date of the week
-    Calendar first = (Calendar) cal.clone();
-    first.add(Calendar.DAY_OF_WEEK, first.getFirstDayOfWeek() - first.get(Calendar.DAY_OF_WEEK));
-    // and add six days to the end date
-    Calendar last = (Calendar) first.clone();
-    last.add(Calendar.DAY_OF_YEAR, 6);
+        holder.headlineView.setText(item.getHeadLine());
+        holder.itemCountView.setText(res.getString(R.string.shops_label) + ": "
+                + ((item.getSubItemCount() >= 0) ? item.getSubItemCount() : 0));
 
-    item.setDateFrom(first.getTime());
-    item.setDateTo(last.getTime());
+        // "calculate" the start date of the week
+        Calendar first = (Calendar) cal.clone();
+        first.add(Calendar.DAY_OF_WEEK, first.getFirstDayOfWeek() - first.get(Calendar.DAY_OF_WEEK));
+        // and add six days to the end date
+        Calendar last = (Calendar) first.clone();
+        last.add(Calendar.DAY_OF_YEAR, 6);
 
-    holder.dateView.setText(df.format(first.getTime()) + " - " + df.format(last.getTime()));
+        item.setDateFrom(first.getTime());
+        item.setDateTo(last.getTime());
 
-    return convertView;
-  }
+        holder.dateView.setText(df.format(first.getTime()) + " - " + df.format(last.getTime()));
 
-  static class ViewHolder {
-    TextView headlineView;
-    TextView itemCountView;
-    TextView dateView;
-  }
+        return convertView;
+    }
+
+    static class ViewHolder {
+        TextView headlineView;
+        TextView itemCountView;
+        TextView dateView;
+    }
 
 }
